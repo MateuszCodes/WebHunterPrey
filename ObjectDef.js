@@ -2,11 +2,13 @@
  * Created by mateusz on 20/01/17.
  */
 
+var playArea = document.getElementById("playfield");
+
 function Hunter() {
 
 }
 
-function FastPrey(dirOfMovIn) {
+function FastPrey(dirOfMovIn, posX, posY) {
 
     this.dirOfMov = dirOfMovIn;
 
@@ -14,7 +16,7 @@ function FastPrey(dirOfMovIn) {
 
 }
 
-function SlowPrey(dirOfMovIn) {
+function SlowPrey(dirOfMovIn, posX, posY) {
 
     this.dirOfMov = dirOfMovIn;
 
