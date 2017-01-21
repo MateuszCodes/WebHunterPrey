@@ -4,13 +4,13 @@
 
 function Hunter() {
 
-
-
 }
 
 function FastPrey(dirOfMovIn) {
 
     this.dirOfMov = dirOfMovIn;
+
+    this.move = moveFast(this.dirOfMov);
 
 }
 
@@ -18,7 +18,7 @@ function SlowPrey(dirOfMovIn) {
 
     this.dirOfMov = dirOfMovIn;
 
-    this.move = moveFast(this.dirOfMov);
+    this.move = moveSlow(this.dirOfMov);
 
 }
 
