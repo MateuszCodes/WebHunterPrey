@@ -2,98 +2,90 @@
  * Created by mateusz on 20/01/17.
  */
 
-var Hunter = {
+function Hunter() {
 
-    playField: document.getElementById("playfield"),
 
-    move: function (buttonPressed) {
-
-        if (buttonPressed == KeyboardEvent.DOM_KEY_LOCATION_LEFT) {
-            this.position.x -= 3;
-        } else if (buttonPressed == KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
-            this.position.x += 3;
-        }
-
-    }
 
 }
 
-var FastPrey = {
+function FastPrey(dirOfMovIn) {
 
-    dirOfMov: 0,
+    this.dirOfMov = dirOfMovIn;
 
-    move: function() {
+}
 
-        switch (this.dirOfMov) {
-            case 0:
-                this.position.y -= 2;
-                break;
-            case 1:
-                this.position.x += 2;
-                this.position.y -= 2;
-                break;
-            case 2:
-                this.position.x += 2;
-                break;
-            case 3:
-                this.position.x += 2;
-                this.position.y += 2;
-                break;
-            case 4:
-                this.position.y += 2;
-                break;
-            case 5:
-                this.position.x -= 2;
-                this.position.y += 2;
-                break;
-            case 6:
-                this.position.x -= 2;
-                break;
-            case 7:
-                this.position.x -= 2;
-                this.position.y -= 2;
-                break;
-        }
+function SlowPrey(dirOfMovIn) {
 
+    this.dirOfMov = dirOfMovIn;
+
+    this.move = moveFast(this.dirOfMov);
+
+}
+
+function moveFast(dirOfMov) {
+
+    switch (dirOfMov) {
+        case 0:
+            this.position.y -= 2;
+            break;
+        case 1:
+            this.position.x += 2;
+            this.position.y -= 2;
+            break;
+        case 2:
+            this.position.x += 2;
+            break;
+        case 3:
+            this.position.x += 2;
+            this.position.y += 2;
+            break;
+        case 4:
+            this.position.y += 2;
+            break;
+        case 5:
+            this.position.x -= 2;
+            this.position.y += 2;
+            break;
+        case 6:
+            this.position.x -= 2;
+            break;
+        case 7:
+            this.position.x -= 2;
+            this.position.y -= 2;
+            break;
     }
 }
 
-var SlowPrey = {
+function moveSlow(dirOfMov) {
 
-    dirOfMov: 0,
-
-    move: function() {
-
-        switch (this.dirOfMov) {
-            case 0:
-                this.position.y -= 1;
-                break;
-            case 1:
-                this.position.x += 1;
-                this.position.y -= 1;
-                break;
-            case 2:
-                this.position.x += 1;
-                break;
-            case 3:
-                this.position.x += 1;
-                this.position.y += 1;
-                break;
-            case 4:
-                this.position.y += 1;
-                break;
-            case 5:
-                this.position.x -= 1;
-                this.position.y += 1;
-                break;
-            case 6:
-                this.position.x -= 1;
-                break;
-            case 7:
-                this.position.x -= 1;
-                this.position.y -= 1;
-                break;
-        }
-
+    switch (dirOfMov) {
+        case 0:
+            this.position.y -= 1;
+            break;
+        case 1:
+            this.position.x += 1;
+            this.position.y -= 1;
+            break;
+        case 2:
+            this.position.x += 1;
+            break;
+        case 3:
+            this.position.x += 1;
+            this.position.y += 1;
+            break;
+        case 4:
+            this.position.y += 1;
+            break;
+        case 5:
+            this.position.x -= 1;
+            this.position.y += 1;
+            break;
+        case 6:
+            this.position.x -= 1;
+            break;
+        case 7:
+            this.position.x -= 1;
+            this.position.y -= 1;
+            break;
     }
 }
